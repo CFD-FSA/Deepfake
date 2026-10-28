@@ -1,0 +1,23 @@
+seed: 42
+device: auto
+paths:
+  results_root: results/stage_c
+  manifest: data/manifest.csv
+  feature_root: data/features
+  checkpoint_root: checkpoints/stage_c
+model:
+  forensic_dim: 128
+  adapter_dropout: 0.10
+  temperature: 0.07
+training:
+  epochs: 10
+  episodes_per_epoch: 50
+  query_per_class: 16
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+few_shot:
+  k_values: [1, 5, 10, 20]
+  support_seeds: [0, 1, 2, 3, 4]
+experiment:
+  adaptation_manipulations: [DF, F2F]
+  held_out_manipulations: [FS, NT]

@@ -1,0 +1,90 @@
+seed: 42
+
+device: auto
+
+paths:
+  results_root: results/stage_d_v2
+  manifest: data/manifest.csv
+  feature_root: data/features
+  checkpoint_root: checkpoints/stage_d_v2
+
+
+model:
+  forensic_dim: 256
+  adapter_dropout: 0.15
+
+  content_model: vggface2
+  content_dim: 512
+  content_hidden_dim: 256
+
+  temperature: 0.07
+  learnable_temperature: true
+
+  use_mspm: true
+  mspm_slots: 16
+
+  grl_lambda: 0.5
+
+  use_frequency_branch: false
+
+
+training:
+  epochs: 30
+
+  episodes_per_epoch: 100
+
+  query_per_class: 64
+
+  learning_rate: 0.0003
+
+  weight_decay: 0.0001
+
+  content_loss_weight: 0.5
+
+  ortho_loss_weight: 0.05
+
+  grad_clip: 1.0
+
+  warmup_fraction: 0.05
+
+  grl_schedule: linear
+
+  grl_warmup_fraction: 0.15
+
+  feature_noise_std: 0.01
+
+  feature_dropout: 0.05
+
+  val_every_n_epochs: 5
+
+  early_stopping_patience: 3
+
+  amp: true
+
+
+few_shot:
+  k_values:
+    - 20
+
+  training_seeds:
+    - 42
+    - 100
+    - 2024
+
+  support_seeds:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+
+
+experiment:
+
+  adaptation_manipulations:
+    - DF
+    - F2F
+    - FS
+    - NT
+
+  held_out_manipulations: []

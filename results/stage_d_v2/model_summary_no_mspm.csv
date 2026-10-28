@@ -1,0 +1,4 @@
+variant,k,train_seed,val_auc,test_auc,test_eer,test_f1,checkpoint
+no_mspm,20,42,0.8385,0.8295,0.254,0.7922,k20_no_mspm_seed42.pt
+no_mspm,20,100,0.8386,0.8297,0.2549,0.7919,k20_no_mspm_seed100.pt
+no_mspm,20,2024,0.8371,0.8296,0.2541,0.7891,k20_no_mspm_seed2024.pt

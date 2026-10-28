@@ -1,0 +1,4 @@
+variant,k,train_seed,val_auc,test_auc,test_eer,test_f1,checkpoint
+no_ais,20,42,0.8418,0.8279,0.2637,0.8338,k20_no_ais_seed42.pt
+no_ais,20,100,0.849,0.8316,0.2587,0.8521,k20_no_ais_seed100.pt
+no_ais,20,2024,0.8451,0.8299,0.26,0.8568,k20_no_ais_seed2024.pt

@@ -1,0 +1,4 @@
+variant,k,train_seed,val_auc,test_auc,test_eer,test_f1,checkpoint
+full,20,42,0.8438,0.8274,0.2621,0.8508,k20_full_seed42.pt
+full,20,100,0.8491,0.8313,0.258,0.834,k20_full_seed100.pt
+full,20,2024,0.8487,0.8272,0.2599,0.8515,k20_full_seed2024.pt

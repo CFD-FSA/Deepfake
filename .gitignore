@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / ambient files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+ENV/
+.env
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Datasets, raw video/frames, extracted faces, manifests, and cached feature embeddings (NEVER PUSH TO GIT)
+data/FaceForensics++*
+data/faces/
+data/frames/
+data/features/
+data/cache/
+data/raw/
+data/metadata/
+data/*.csv
+data/frame_manifest.csv
+*.mp4
+*.avi
+*.mov
+*.mkv
+test_media/
+
+# Large Model Checkpoints & Binary Weights (NEVER PUSH TO GIT)
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.npy
+checkpoints/
+backup_old_model/
+
+# Local logs and temporary files
+*.log
+*.tmp
+scratch/
+.system_generated/

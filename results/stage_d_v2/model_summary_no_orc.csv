@@ -1,0 +1,4 @@
+variant,k,train_seed,val_auc,test_auc,test_eer,test_f1,checkpoint
+no_orc,20,42,0.846,0.8285,0.2611,0.8521,k20_no_orc_seed42.pt
+no_orc,20,100,0.8466,0.8316,0.2601,0.837,k20_no_orc_seed100.pt
+no_orc,20,2024,0.85,0.8269,0.2602,0.8492,k20_no_orc_seed2024.pt

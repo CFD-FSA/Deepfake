@@ -1,0 +1,13 @@
+seed: 42
+device: auto
+paths:
+  results_root: results/stage_a
+  manifest: data/manifest.csv
+  feature_root: data/features
+model:
+  clip_name: "openai/clip-vit-base-patch32"
+  content_model: "vggface2"
+  content_dim: 512
+stage_a:
+  k_values: [1, 5, 10, 20, 100]
+  seeds: [0, 1, 2, 3, 4]

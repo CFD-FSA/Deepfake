@@ -1,0 +1,23 @@
+{
+  "num_videos": 5000,
+  "split_counts": {
+    "train": 3500,
+    "val": 750,
+    "test": 750
+  },
+  "manipulation_counts": {
+    "REAL": 1000,
+    "DF": 1000,
+    "F2F": 1000,
+    "FS": 1000,
+    "NT": 1000
+  },
+  "compression_counts": {
+    "C23": 5000
+  },
+  "source_groups": 500,
+  "source_group_leakage_groups": 0,
+  "identity_metadata_available": false,
+  "identity_overlap_counts": {},
+  "split_method": "source_group_random"
+}

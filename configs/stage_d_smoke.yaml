@@ -1,0 +1,82 @@
+seed: 42
+device: cuda
+
+paths:
+  results_root: D:/CFD-FSA-data/results/stage_d_smoke
+  checkpoint_root: D:/CFD-FSA-data/checkpoints/stage_d_smoke
+  feature_root: D:/CFD-FSA-data/features_60
+  face_root: D:/CFD-FSA-data/faces_60
+  manifest: data/manifest_60.csv
+
+# The dataset is inside the project at:
+# data/FaceForensics++_C23/
+data:
+  raw_root: "data/FaceForensics++_C23"
+  csv_root: "data/FaceForensics++_C23/csv"
+  official_split_dir: "data/splits"
+  use_official_splits: true
+
+  compression: C23
+
+  # Initial CFD-FSA study.
+  required_manipulations:
+    - REAL
+    - DF
+    - F2F
+    - FS
+    - NT
+
+  # Present in the dataset but intentionally excluded from the initial study.
+  excluded_manipulations:
+    - FaceShifter
+    - DeepFakeDetection
+
+  # Used only if official FF++ split JSON files are unavailable.
+  train_fraction: 0.70
+  val_fraction: 0.15
+
+  frame_every_n: 1
+  max_frames_per_video: 60
+  face_size: 224
+  min_face_size: 40
+  mtcnn_margin: 20
+  
+
+model:
+  clip_name: "openai/clip-vit-base-patch32"
+  forensic_dim: 128
+  adapter_dropout: 0.10
+  content_model: "vggface2"
+  content_dim: 512
+  content_hidden_dim: 256
+  temperature: 0.07
+  grl_lambda: 1.0
+  use_frequency_branch: false
+
+training:
+  epochs: 1
+  episodes_per_epoch: 1
+  query_per_class: 32
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  content_loss_weight: 1.0
+  grad_clip: 1.0
+  num_workers: 0
+  amp: true
+
+few_shot:
+  k_values: [20]
+  stage_a_k_values: [1, 5, 10, 20, 100]
+  support_seeds: [0, 1, 2, 3, 4]
+
+experiment:
+  adaptation_manipulations: [REAL, DF, F2F, FS, NT]
+  held_out_manipulations: []
+  far_targets: [0.01, 0.001]
+
+
+
+
+
+
+
